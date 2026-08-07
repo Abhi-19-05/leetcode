@@ -5,12 +5,12 @@ class Solution:
         d = {}
         ans = []
         rank = 1
-        for num in s:
-            d[num] = rank
+        for i in s:
+            d[i] = rank
             rank += 1
 
         
-        for num in arr:
-            ans.append(d[num])
+        for i in arr:
+            ans.append(d[i])
 
         return ans
