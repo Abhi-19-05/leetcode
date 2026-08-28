@@ -1,12 +1,9 @@
 class Solution:
     def countAsterisks(self, s: str) -> int:
-        inside = False
-        count = 0
-
-        for ch in s:
-            if ch == '|':
-                inside = not inside
-            elif ch == '*' and not inside:
-                count += 1
-
-        return count
+        y = s.split("|")
+     
+        a = 0
+        for i in y[::2]:
+            if "*" in i:
+                a+=i.count("*")
+        return a
