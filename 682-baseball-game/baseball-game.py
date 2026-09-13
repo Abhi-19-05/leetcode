@@ -1,15 +1,18 @@
 class Solution:
     def calPoints(self, operations: List[str]) -> int:
-      k = []
+        k = []
 
-      for i in operations:
-        if i.lstrip('-').isdigit(): 
-            k.append(int(i))
-        elif i == 'C':
-            k.pop()
-        elif i == 'D':
-            k.append(k[-1] * 2)
-        else:
-            k.append(k[-1] + k[-2])
-         
-      return sum(k) 
+        for i in operations:
+            if i == "C":
+                k.pop()
+
+            elif i == "D":
+                k.append(2 * k[-1])
+
+            elif i == "+":
+                k.append(k[-1] + k[-2])
+
+            else:
+                k.append(int(i))
+
+        return sum(k)
